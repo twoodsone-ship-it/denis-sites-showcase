@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо · Автосервис «Мотор»</title>
+<style>
+:root{--bg:#101113;--card:#191c1f;--ink:#f4f1ea;--muted:#b3b6ad;--accent:#f0c400;--line:#2c3033}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Segoe UI",Arial,sans-serif}
+a{color:inherit}.notice{background:var(--accent);color:#161200;text-align:center;font-size:12px;font-weight:700;letter-spacing:.04em;padding:9px 12px;text-transform:uppercase}
+.wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px}
+.logo{font-weight:800;letter-spacing:-.04em;font-size:26px}.logo span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.btn{display:inline-block;background:var(--accent);color:#161200;border:0;border-radius:8px;padding:12px 18px;font:700 15px/1 "Segoe UI",Arial,sans-serif;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero{padding:40px 0 10px}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--accent);font-weight:700}
+h1{font-size:clamp(36px,6vw,60px);line-height:1.05;letter-spacing:-.04em;margin:10px 0 16px}
+.lead{color:var(--muted);max-width:46ch}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.stat{border:1px solid var(--line);padding:18px;border-radius:12px;background:var(--card)}
+.stat b{display:block;font-size:22px;color:var(--accent)}
+section{padding:50px 0}h2{font-size:32px;margin:0 0 20px;letter-spacing:-.03em}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card b{display:block;font-size:20px;margin-bottom:6px}
+.price{color:var(--accent);font-weight:700}
+.hint{font-size:13px;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+footer{padding:20px 0 48px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.back{color:var(--accent);text-decoration:none}
+dialog{border:0;border-radius:16px;background:#191c1f;color:var(--ink);padding:24px;width:min(92vw,440px)}
+dialog::backdrop{background:#0008}label{display:block;margin:10px 0;font-size:14px}
+input,textarea{width:100%;margin-top:6px;padding:10px;border-radius:8px;border:1px solid var(--line);background:#101113;color:var(--ink);font:inherit}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}#preview{white-space:pre-wrap;background:#101113;padding:10px;border-radius:8px}
+@media(max-width:800px){.grid,.stats,.contact{grid-template-columns:1fr}h1{font-size:36px}}
+</style>
+</head>
+<body>
+<div class="notice">Демо-работа · вымышленный пример</div>
+<div class="wrap">
+<header>
+  <div class="logo">МОТОР<span>Автосервис · демо</span></div>
+  <a class="btn" href="#contact" onclick="demoMsg(event)">Записаться на ремонт</a>
+</header>
+<section class="hero">
+  <div class="eyebrow">Нижний Новгород · демо-пример</div>
+  <h1>Честный ремонт без лишних работ</h1>
+  <p class="lead">Пример сайта для автосервиса: список работ, понятные цены и кнопка записи, которую видно с телефона.</p>
+  <a class="btn" href="#contact" onclick="demoMsg(event)">Оставить заявку</a>
+  <div class="stats">
+    <div class="stat"><b>Диагностика</b>перед ремонтом</div>
+    <div class="stat"><b>Шиномонтаж</b>и сезонное хранение</div>
+    <div class="stat"><b>Пн–Сб</b>8:00–20:00</div>
+  </div>
+</section>
+<section id="services">
+  <h2>Что делаем</h2>
+  <div class="grid">
+    <article class="card"><b>Техническое обслуживание</b><p>Замена масла, фильтров, колодок. Скажем, что нужно сейчас, а что может подождать.</p><div class="price">от 2 500 ₽</div></article>
+    <article class="card"><b>Диагностика</b><p>Компьютерная проверка и осмотр ходовой. Результат — понятным языком.</p><div class="price">от 1 500 ₽</div></article>
+    <article class="card"><b>Шиномонтаж</b><p>Сезонная смена, балансировка, ремонт проколов.</p><div class="price">от 2 000 ₽</div></article>
+    <article class="card"><b>Тормоза и подвеска</b><p>Замена деталей, проверка люфтов, тест после работ.</p><div class="price">по осмотру</div></article>
+  </div>
+  <p class="hint">Цены примерные и стоят только для демонстрации макета.</p>
+</section>
+<section class="contact" id="contact">
+  <div class="card">
+    <h2>Записаться</h2>
+    <p>Напишите, какая машина и что беспокоит. На настоящем сайте это уходило бы мастеру в WhatsApp или Telegram.</p>
+    <a class="btn" href="#contact" onclick="demoMsg(event)">Написать в WhatsApp</a>
+    <a class="btn ghost" href="#contact" onclick="demoMsg(event)">Написать в Telegram</a>
+  </div>
+  <div class="card">
+    <b>Адрес для примера</b>
+    <p>ул. Гаражная, 5 · Нижний Новгород</p>
+    <p class="hint">Это демо-работа, не существующий автосервис. На настоящем сайте здесь будет ваш адрес и карта.</p>
+  </div>
+</section>
+<footer>
+  <a class="back" href="../../index.html">← К витрине работ</a>
+  <div>Вымышленный пример. Не является сайтом реальной компании.</div>
+</footer>
+</div>
+
+<dialog id="modal">
+  <form method="dialog">
+    <h2>Пример заявки</h2>
+    <p>Форма работает только на этой странице и никуда не отправляет данные. На настоящем сайте заявка уходила бы владельцу в WhatsApp или Telegram.</p>
+    <label>Имя<input name="client" maxlength="80" placeholder="Ваше имя"></label>
+    <label>Комментарий<textarea name="request" id="request" rows="3" maxlength="500" placeholder="Что нужно"></textarea></label>
+    <div class="row">
+      <button type="button" class="btn" onclick="preview()">Показать пример</button>
+      <button class="btn ghost" value="cancel">Закрыть</button>
+    </div>
+    <p id="preview" hidden></p>
+  </form>
+</dialog>
+<script>
+function openModal(v){var r=document.getElementById("request"); if(r) r.value=v||""; document.getElementById("modal").showModal()}
+function preview(){
+  var f=document.querySelector("#modal form");
+  var t="ДЕМО-ЗАЯВКА\nИмя: "+(f.elements.client.value.trim()||"не указано")+"\nЗапрос: "+(f.elements.request.value.trim()||"не указан")+"\n\nНа настоящем сайте это сообщение ушло бы владельцу.";
+  var p=document.getElementById("preview"); p.hidden=false; p.textContent=t;
+}
+function demoMsg(e){if(e) e.preventDefault(); openModal("Хочу записаться");}
+</script>
+
+</body></html>

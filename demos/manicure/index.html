@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо · Студия «Шёлк»</title>
+<style>
+:root{--bg:#f8eeea;--card:#fff8f6;--ink:#3a2f32;--muted:#7a6a6d;--accent:#b56b74;--line:#ead9d6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",Arial,sans-serif}
+a{color:inherit}.notice{background:#3a2f32;color:#f8eeea;text-align:center;font-size:12px;font-weight:700;letter-spacing:.04em;padding:9px 12px;text-transform:uppercase}
+.wrap{width:min(1020px,calc(100% - 32px));margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:Georgia,serif;font-size:30px;font-style:italic}.logo span{display:block;font-style:normal;font-family:"Segoe UI",Arial,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 20px;font:700 15px/1 "Segoe UI",Arial,sans-serif;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero{padding:36px 0 10px;display:grid;grid-template-columns:.95fr 1.05fr;gap:28px;align-items:center}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--accent);font-weight:700}
+h1{font-family:Georgia,serif;font-size:clamp(38px,6vw,62px);line-height:1.05;margin:10px 0 16px;font-weight:500}
+.lead{color:var(--muted);max-width:36ch}
+.hero-art{min-height:340px;border-radius:40% 28% 36% 30%;background:
+radial-gradient(circle at 40% 30%,#f0c8c4,transparent 45%),
+linear-gradient(160deg,#e8b8b4,#8a5560);}
+section{padding:52px 0}h2{font-family:Georgia,serif;font-size:34px;margin:0 0 20px;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px}
+.card b{display:block;font-size:20px;margin-bottom:6px;font-family:Georgia,serif}
+.price{color:var(--accent);font-weight:700}
+.hint{font-size:13px;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ph{height:120px;border-radius:18px;background:linear-gradient(135deg,#ead0cc,#c9898f)}
+.ph:nth-child(2){background:linear-gradient(135deg,#f0ddd6,#d4a5a0)}
+.ph:nth-child(3){background:linear-gradient(135deg,#e6c8c4,#b56b74)}
+.ph:nth-child(4){background:linear-gradient(135deg,#f3e2dc,#c9a8a4)}
+.contact{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+footer{padding:20px 0 48px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.back{color:var(--accent);text-decoration:none}
+dialog{border:0;border-radius:20px;background:#fff8f6;color:var(--ink);padding:24px;width:min(92vw,440px)}
+dialog::backdrop{background:#0005}label{display:block;margin:10px 0;font-size:14px}
+input,textarea{width:100%;margin-top:6px;padding:10px;border-radius:10px;border:1px solid var(--line);background:#f8eeea;color:var(--ink);font:inherit}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}#preview{white-space:pre-wrap;background:#f8eeea;padding:10px;border-radius:10px}
+@media(max-width:800px){.hero,.grid,.contact,.gallery{grid-template-columns:1fr 1fr}h1{font-size:38px}.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="notice">Демо-работа · вымышленный пример</div>
+<div class="wrap">
+<header>
+  <div class="logo">Шёлк<span>Студия маникюра · демо</span></div>
+  <a class="btn" href="#contact" onclick="demoMsg(event)">Записаться</a>
+</header>
+<section class="hero">
+  <div>
+    <div class="eyebrow">Нижний Новгород · демо-пример</div>
+    <h1>Аккуратный маникюр без спешки</h1>
+    <p class="lead">Пример сайта для студии: услуги, примерные цены и запись с телефона в два нажатия.</p>
+    <a class="btn" href="#contact" onclick="demoMsg(event)">Записаться</a>
+    <a class="btn ghost" href="#services">Смотреть услуги</a>
+  </div>
+  <div class="hero-art" aria-hidden="true"></div>
+</section>
+<section id="services">
+  <h2>Услуги</h2>
+  <div class="grid">
+    <article class="card"><b>Маникюр</b><p>Обработка, форма, уход за кутикулой.</p><div class="price">от 1 400 ₽</div></article>
+    <article class="card"><b>Покрытие</b><p>Гель-лак, бережное снятие, укрепление.</p><div class="price">от 1 800 ₽</div></article>
+    <article class="card"><b>Педикюр</b><p>Комфортный уход и аккуратное покрытие.</p><div class="price">от 2 200 ₽</div></article>
+  </div>
+  <p class="hint">Цены примерные и стоят только для демонстрации макета.</p>
+</section>
+<section>
+  <h2>Как могут выглядеть фото работ</h2>
+  <div class="gallery" aria-hidden="true"><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
+  <p class="hint">На настоящем сайте здесь будут ваши фото. Сейчас — цветные плашки для макета, не чужие снимки.</p>
+</section>
+<section class="contact" id="contact">
+  <div class="card">
+    <h2>Запись</h2>
+    <p>На настоящем сайте кнопки открывали бы WhatsApp и Telegram мастера.</p>
+    <a class="btn" href="#contact" onclick="demoMsg(event)">Написать в WhatsApp</a>
+    <a class="btn ghost" href="#contact" onclick="demoMsg(event)">Написать в Telegram</a>
+  </div>
+  <div class="card">
+    <b>Пример адреса</b>
+    <p>ул. Цветочная, 3 · Нижний Новгород</p>
+    <p class="hint">Это демо-работа, не существующая студия.</p>
+  </div>
+</section>
+<footer>
+  <a class="back" href="../../index.html">← К витрине работ</a>
+  <div>Вымышленный пример. Не является сайтом реальной компании.</div>
+</footer>
+</div>
+
+<dialog id="modal">
+  <form method="dialog">
+    <h2>Пример заявки</h2>
+    <p>Форма работает только на этой странице и никуда не отправляет данные. На настоящем сайте заявка уходила бы владельцу в WhatsApp или Telegram.</p>
+    <label>Имя<input name="client" maxlength="80" placeholder="Ваше имя"></label>
+    <label>Комментарий<textarea name="request" id="request" rows="3" maxlength="500" placeholder="Что нужно"></textarea></label>
+    <div class="row">
+      <button type="button" class="btn" onclick="preview()">Показать пример</button>
+      <button class="btn ghost" value="cancel">Закрыть</button>
+    </div>
+    <p id="preview" hidden></p>
+  </form>
+</dialog>
+<script>
+function openModal(v){var r=document.getElementById("request"); if(r) r.value=v||""; document.getElementById("modal").showModal()}
+function preview(){
+  var f=document.querySelector("#modal form");
+  var t="ДЕМО-ЗАЯВКА\nИмя: "+(f.elements.client.value.trim()||"не указано")+"\nЗапрос: "+(f.elements.request.value.trim()||"не указан")+"\n\nНа настоящем сайте это сообщение ушло бы владельцу.";
+  var p=document.getElementById("preview"); p.hidden=false; p.textContent=t;
+}
+function demoMsg(e){if(e) e.preventDefault(); openModal("Хочу записаться");}
+</script>
+
+</body></html>

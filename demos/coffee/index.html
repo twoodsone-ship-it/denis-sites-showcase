@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо · Кофейня «Зерно»</title>
+<style>
+:root{--bg:#f6efe6;--card:#fffaf4;--ink:#3c2a21;--muted:#7a6254;--accent:#b8583a;--line:#e6d8c8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",Arial,sans-serif}
+a{color:inherit}.notice{background:#3c2a21;color:#f6efe6;text-align:center;font-size:12px;font-weight:700;letter-spacing:.04em;padding:9px 12px;text-transform:uppercase}
+.wrap{width:min(1000px,calc(100% - 32px));margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:Georgia,serif;font-size:30px}.logo span{display:block;font-family:"Segoe UI",Arial,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 20px;font:700 15px/1 "Segoe UI",Arial,sans-serif;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero{padding:30px 0 10px;text-align:center}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--accent);font-weight:700}
+h1{font-family:Georgia,serif;font-size:clamp(40px,7vw,70px);line-height:1;margin:12px auto 16px;font-weight:500;max-width:12ch}
+.lead{color:var(--muted);max-width:40ch;margin:0 auto 20px}
+.hero-art{margin:28px auto 0;max-width:820px;min-height:280px;border-radius:28px;background:
+radial-gradient(circle at 70% 30%,#e8c8a8,transparent 40%),
+linear-gradient(160deg,#d7b194,#8a5340);border:1px solid var(--line)}
+section{padding:54px 0}h2{font-family:Georgia,serif;font-size:34px;margin:0 0 20px;font-weight:500;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+.card b{display:block;font-size:20px;margin-bottom:6px;font-family:Georgia,serif}
+.price{color:var(--accent);font-weight:700}
+.hint{font-size:13px;color:var(--muted);text-align:center}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+footer{padding:20px 0 48px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.back{color:var(--accent);text-decoration:none}
+dialog{border:0;border-radius:20px;background:#fffaf4;color:var(--ink);padding:24px;width:min(92vw,440px)}
+dialog::backdrop{background:#0005}label{display:block;margin:10px 0;font-size:14px}
+input,textarea{width:100%;margin-top:6px;padding:10px;border-radius:10px;border:1px solid var(--line);background:#f6efe6;color:var(--ink);font:inherit}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}#preview{white-space:pre-wrap;background:#f6efe6;padding:10px;border-radius:10px}
+@media(max-width:800px){.grid,.contact{grid-template-columns:1fr}h1{font-size:40px}}
+</style>
+</head>
+<body>
+<div class="notice">Демо-работа · вымышленный пример</div>
+<div class="wrap">
+<header>
+  <div class="logo">Зерно<span>Кофейня · демо</span></div>
+  <a class="btn" href="#contact" onclick="demoMsg(event)">Заказать столик</a>
+</header>
+<section class="hero">
+  <div class="eyebrow">Нижний Новгород · демо-пример</div>
+  <h1>Кофе, выпечка и тихое утро</h1>
+  <p class="lead">Пример страницы для небольшой кофейни: меню сразу на виду, адрес и кнопки, чтобы написать вам.</p>
+  <a class="btn" href="#menu">Смотреть меню</a>
+  <div class="hero-art" aria-hidden="true"></div>
+</section>
+<section id="menu">
+  <h2>Меню</h2>
+  <div class="grid">
+    <article class="card"><b>Эспрессо</b><p>Плотный, короткий, с понятной кислинкой.</p><div class="price">180 ₽</div></article>
+    <article class="card"><b>Капучино</b><p>Молоко, мягкая пенка, можно на альтернативном молоке.</p><div class="price">250 ₽</div></article>
+    <article class="card"><b>Фильтр дня</b><p>Каждый день другое зерно. Скажем, какое сегодня.</p><div class="price">230 ₽</div></article>
+    <article class="card"><b>Круассан</b><p>Сливочный, тёплый, к кофе или с собой.</p><div class="price">190 ₽</div></article>
+    <article class="card"><b>Сырник</b><p>Домашний, со сметаной или ягодами.</p><div class="price">270 ₽</div></article>
+    <article class="card"><b>Какао</b><p>Для тех, кто зашёл погреться, а не взбодриться.</p><div class="price">220 ₽</div></article>
+  </div>
+  <p class="hint">Цены примерные и стоят только для демонстрации макета.</p>
+</section>
+<section class="contact" id="contact">
+  <div class="card">
+    <h2>Как к нам</h2>
+    <p>Пример адреса: ул. Набережная, 8</p>
+    <p>Ежедневно 8:00–21:00</p>
+    <p class="hint">Это демо-работа, не существующая кофейня.</p>
+  </div>
+  <div class="card">
+    <h2>Написать</h2>
+    <p>На настоящем сайте можно было бы забронировать столик в WhatsApp или Telegram.</p>
+    <a class="btn" href="#contact" onclick="demoMsg(event)">WhatsApp</a>
+    <a class="btn ghost" href="#contact" onclick="demoMsg(event)">Telegram</a>
+  </div>
+</section>
+<footer>
+  <a class="back" href="../../index.html">← К витрине работ</a>
+  <div>Вымышленный пример. Не является сайтом реальной компании.</div>
+</footer>
+</div>
+
+<dialog id="modal">
+  <form method="dialog">
+    <h2>Пример заявки</h2>
+    <p>Форма работает только на этой странице и никуда не отправляет данные. На настоящем сайте заявка уходила бы владельцу в WhatsApp или Telegram.</p>
+    <label>Имя<input name="client" maxlength="80" placeholder="Ваше имя"></label>
+    <label>Комментарий<textarea name="request" id="request" rows="3" maxlength="500" placeholder="Что нужно"></textarea></label>
+    <div class="row">
+      <button type="button" class="btn" onclick="preview()">Показать пример</button>
+      <button class="btn ghost" value="cancel">Закрыть</button>
+    </div>
+    <p id="preview" hidden></p>
+  </form>
+</dialog>
+<script>
+function openModal(v){var r=document.getElementById("request"); if(r) r.value=v||""; document.getElementById("modal").showModal()}
+function preview(){
+  var f=document.querySelector("#modal form");
+  var t="ДЕМО-ЗАЯВКА\nИмя: "+(f.elements.client.value.trim()||"не указано")+"\nЗапрос: "+(f.elements.request.value.trim()||"не указан")+"\n\nНа настоящем сайте это сообщение ушло бы владельцу.";
+  var p=document.getElementById("preview"); p.hidden=false; p.textContent=t;
+}
+function demoMsg(e){if(e) e.preventDefault(); openModal("Хочу записаться");}
+</script>
+
+</body></html>
