@@ -3,7 +3,9 @@
 Публичная страница с примерами, ценами и кнопкой «Написать в Telegram».
 Хостинг: бесплатный статический сайт на Render.
 
-Живой адрес: https://denis-sites.onrender.com
+Живой адрес: https://twoodsone-ship-it.github.io/denis-sites-showcase/
+
+Эта ссылка открывается из России без VPN. Копия на Render (https://denis-sites.onrender.com) тоже сохранена, но у части провайдеров может не открываться.
 
 Кнопка «Написать в Telegram» ведёт на https://t.me/twoodsone
 
